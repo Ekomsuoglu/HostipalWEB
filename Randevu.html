@@ -5,6 +5,29 @@
     <meta charset="utf-8" />
     <title>Randevu</title>
     <link href="bootstrap.css" rel="stylesheet" />
+    <script src="bootstrap.js"></script>
+    <script src="bootstrap.bundle.js"></script>
+<script>
+window.onload=function(){
+    
+    document.getElementById('Go').onclick=function(){
+         var tc=document.getElementById('tcNo').value;
+         var isim =document.getElementById('firstName').value;
+         var soyad=document.getElementById('lastName').value;
+         var pol=document.getElementById('poliklinikName').value;
+         document.getElementById('Mesaj').innerText="Randevu Oluşturuldu"
+
+         document.getElementById("TcNo").innerHTML="T.C Kimlik No: "+tc;
+         document.getElementById("FirstName").innerHTML="Ad: "+isim;
+         document.getElementById("LastName").innerHTML="Soyad: "+soyad;
+         document.getElementById("PoliklinikName").innerHTML="Poliklinik: "+pol;
+}
+};
+
+
+
+</script>    
+
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -36,29 +59,44 @@
     </div>
     <div class="container">
         <div class="row">
+            <h1 id="Mesaj">
+                    
+            </h1>
             <div class="col-md-6 mx-auto mt-2">
                 <body class="text-center">
                     <main class="form-signin w-100 m-auto">
-                        <form>
-                            <h1 class="h3 mb-3 fw-normal">Lütfen Giriş Yapın</h1>
+                            <h1 class="h3 mb-3 fw-normal">Lütfen Bilgilerinizi Girin</h1>
 
                             <div class="form-floating">
-                                <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                <input type="text" class="form-control" id="tcNo" >
                                 <label for="floatingInput">T.C. Kimlik No</label>
                             </div>
                             <div class="form-floating">
-                                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                                <label for="floatingPassword">Parola</label>
+                                <input type="text" class="form-control" id="firstName" >
+                                <label for="floatingPassword">Ad</label>
                             </div>
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="lastName">
+                                <label for="floatingPassword">Soyad</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="poliklinikName">
+                                <label for="floatingPassword">Poliklinik</label>
+                            </div> 
+                            <button id="Go" class="w-100 btn btn-lg btn-primary mt-2"  type="submit">Giriş</button>
+                           <div>
+                            <h1 id="Mesaj">
 
-                            <div class="checkbox mb-3">
-                                <label>
-                                    <input type="checkbox" value="remember-me"> Beni Hatırla
-                                </label>
-                            </div>
-                            <button class="w-100 btn btn-lg btn-primary" type="submit">Giriş</button>
+                            </h1>
+                           </div>
+                           
+                            <h5 id="TcNo"> </h5> 
+                           <h5 id="FirstName"> </h5>
+                           <h5 id="LastName"> </h5>
+                           <h5 id="PoliklinikName"> </h5>
+                            
                             <p class="mt-5 mb-3 text-muted">© 2017–2022</p>
-                        </form>
+                       
                     </main>
                 </body>
             </div>
